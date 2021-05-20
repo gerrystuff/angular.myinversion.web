@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+ html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } 
+
+
+.main-container{
+    background-color: rgb(232, 236, 236);
+    height: 100vh;
+}
+
+.log-container{
+    box-shadow: 0 .9px 5.9px rgba(0, 0, 0, 0.09);
+    margin-top: 5rem;
+    padding: 25px;  
+    width: 500px;  
+}
+.rec-container{
+    box-shadow: 0 .7px 5.3px rgba(0, 0, 0, 0.09);
+    margin-top: 5rem;
+    padding: 55px;
+    width: 400px;
+}
