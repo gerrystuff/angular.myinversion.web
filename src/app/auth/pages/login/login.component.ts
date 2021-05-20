@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -13,10 +16,22 @@ export class LoginComponent {
      
   })
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(
+    private formBuilder:FormBuilder,
+    private router:Router,
+    private authService:AuthService
+    ) { }
 
   login(){
-    console.log(this.logForm.value)
-    console.log(this.logForm.valid)
+    const {user_name,user_password} = this.logForm.value;
+    
+    this.authService.login(user_name,user_password)
+      .subscribe( ok => {
+        if(ok === true){
+          this.router.navigateByUrl('/home');  
+        } else {
+          Swal.fire('Error',ok,'error')
+        }
+      })
   }
 }
