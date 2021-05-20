@@ -11,10 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-              LoginComponent,
-              RegisterComponent,
-              MainComponent
-            ],
+    LoginComponent,
+    RegisterComponent,
+    MainComponent
+  ],
   imports: [
     CommonModule,
     AuthRoutingModule,

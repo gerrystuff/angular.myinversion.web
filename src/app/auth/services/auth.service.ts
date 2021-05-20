@@ -61,7 +61,6 @@ export class AuthService {
             name: resp.name!,
             uid: resp.uid!
           }
-          console.log(resp)
           return resp.ok
         }),
         catchError(err => of(false))

@@ -6,13 +6,22 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { RendimientosComponent } from './rendimientos/rendimientos.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductformComponent } from './productform/productform.component';
 
 
 @NgModule({
-  declarations: [NavbarComponent, HomeComponent, PortfolioComponent, RendimientosComponent],
+  declarations: [
+    NavbarComponent,
+    HomeComponent,
+    PortfolioComponent,
+    RendimientosComponent,
+    ProductformComponent
+  ],
   imports: [
     CommonModule,
-    ProtectedRoutingModule
+    ProtectedRoutingModule,
+    HttpClientModule
   ]
 })
 export class ProtectedModule { }

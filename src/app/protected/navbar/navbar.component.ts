@@ -9,7 +9,6 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 export class NavbarComponent  {
 
   get user(){
-    console.log(this.authService.user)
     return {... this.authService.user}
   }
 

@@ -1,0 +1,55 @@
+<div class='container form-container'>
+
+    <form>
+        <fieldset>
+            <div>
+                <legend class='text-center mb-3'>Nuevo plan</legend>
+            </div>
+            <!-- <div *ngIf="edit; else elseTitle"><legend>Editar empleado</legend></div> -->
+            <!-- <ng-template #elseTitle><legend>Nuevo empleado</legend></ng-template> -->
+
+
+            <div class="form-group mt-1">
+                <label class="form-label ml-1 mb-1">Nombre</label>
+                <input type="text" name="title" class="form-control" >
+            </div>
+
+            <div class="form-group mt-1">
+                <label class="form-label ml-1 mb-1">Inversion minima</label>
+                <input type="number" min='1' step='any' class="form-control">
+
+            </div>
+
+            <div class="form-group ">
+                <label class="form-label ml-1 mb-1">Inversion maxima</label>
+                <input type="number" min='2' step='any' class="form-control">
+            </div>
+
+
+            <div class="form-group">
+                <label class="form-label ml-1 mb-1">Porcentaje</label>
+                <input type="number" min='1' max='100' step='any' class="form-control" placeholder="%">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label ml-1 mb-1">Duracion del plan</label>
+                <input type="number" min='1' max='12' step='any' class="form-control" placeholder="Meses">
+            </div>
+
+            <div class="d-flex justify-content-center pb-2">
+                <!-- <button (click)='edit ? updateEmployee() : saveNewEmployee()'type="submit" class="btn btn-outline-primary mr-2"> -->
+                <!-- <div *ngIf="edit; else elseBlock">Editar empleado</div> -->
+                <!-- <ng-template #elseBlock>Agregar empleado</ng-template> -->
+                <!-- </button> -->
+
+                <button class='btn btn-outline-primary mr-2' type='submit'> Agregar plan</button>
+
+            </div>
+
+
+
+        </fieldset>
+    </form>
+
+
+</div>
