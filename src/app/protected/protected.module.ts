@@ -8,6 +8,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { RendimientosComponent } from './rendimientos/rendimientos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductformComponent } from './productform/productform.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ProductformComponent } from './productform/productform.component';
   imports: [
     CommonModule,
     ProtectedRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule
   ]
 })

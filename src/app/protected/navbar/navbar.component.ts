@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 export class NavbarComponent  {
 
   get user(){
-    return {... this.authService.user}
+    return this.authService.user
   }
 
   constructor(
