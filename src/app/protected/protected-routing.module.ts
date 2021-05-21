@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProductformComponent } from './productform/productform.component';
@@ -14,7 +13,9 @@ const routes: Routes = [
       {path:'',component:PortfolioComponent} ,
       {path:'portfolio',component:PortfolioComponent} ,
       {path:'rendimientos',component:RendimientosComponent} ,
-      {path:'portfolio/add', component:ProductformComponent},
+      {path:'product/add', component:ProductformComponent},
+      {path:'product/edit/:id', component:ProductformComponent},
+
       
 
       {path:'**',redirectTo:''} 

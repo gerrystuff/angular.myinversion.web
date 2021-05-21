@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2';
+import utilities from 'src/app/protected/helpers/utilities';
 
 
 @Component({
@@ -28,7 +29,8 @@ export class RegisterComponent {
         .subscribe(ok => {
           if(ok === true){
               Swal.fire('Success','Usuario creado, favor de logearse.','success');
-              this.waitUnTill();
+              utilities.waitUnTill();
+              this.router.navigate(['/auth/login'])
           }else{
             Swal.fire('Error',ok,'error')
           }
@@ -38,12 +40,6 @@ export class RegisterComponent {
   }
 
 
-  waitUnTill() {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        this.router.navigate(['/auth/login'])
-      }, 1200);
-    });
-  }
+
 
 }

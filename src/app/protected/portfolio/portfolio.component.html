@@ -1,5 +1,7 @@
-<div class="d-flex justify-content-around plan-container">
-    <div class="p-2 plan-card " *ngFor="let product of products; index as i">
+
+
+<div class="d-flex flex-wrap justify-content-between mt-5">
+    <div class="container p-2 plan-card " *ngFor="let product of products; index as i">
         <div class="card-header text-center" >{{product.product_name}}</div>
         <div class="card-body">
 
@@ -9,36 +11,37 @@
                 <tbody >
                     <tr>
                         <th scope="row">Inversion minima</th>
-                        <td>${{product.product_minInvestment}}</td>
+                        <td>$ {{product.product_minInvestment | number}}</td>
                     </tr>
 
                     <tr>
                         <th scope="row">Inversion maxima</th>
-                        <td>${{product.product_maxInvestment}}</td>
+                        <td>$ {{product.product_maxInvestment | number}}</td>
                     </tr>
 
                     <tr>
                         <th scope="row">Tasa mensual</th>
-                        <td class='text-center'>% {{product.product_monthlyRate}}</td>
+                        <td class='text-center'>{{product.product_monthlyRate | number}} %</td>
                     </tr>
 
                     <tr>
                         <th scope="row">Tiempo</th>
-                        <td class='text-center'>{{product.product_planTime}} Meses</td>
+                        <td class='text-center'>{{product.product_planTime | number}} Meses</td>
                     </tr>
 
                 </tbody>
             </table>
         </div>
-        <div class="d-flex justify-content-around">
+        
+        <div class="d-flex justify-content-around ">
          
-            <a style="cursor:pointer;">
+            <a [routerLink]="['/home/product/edit',product.id]"style="cursor:pointer;" routerLink='/home/portfolio/add'>
                 <img class='icons' src="../../../assets/editar.svg" alt="">
              </a> 
-              <button class='btnDelete'>
+              <button (click)='deleteProduct(product.id)' class='btnDelete'>
                 <img  class='icons' src="../../../assets/trash.svg" alt="">
               </button>
         </div>
     </div>
 
-</div>
+</div>    

@@ -2,14 +2,14 @@
 <div class="container rec-container mt-3" >
     <div class="row">  
         <div class="col" >
-            <img src="../../../assets/user.svg" alt="">
+            <img class="centerBlock" src="../../../assets/user.svg" style="text-align:center;width: 250px; height: 250px;" alt="">
         </div>
         <div class="w-100"></div>
         
-        <label class="form-label mt-4"><strong>Nombre de usuario nuevo</strong></label>
+        <label class="form-label mt-4"><strong>Nombre de usuario nuevo <small>(solo caracteres)</small></strong></label>
         <input type="text" formControlName="user_name" class="form-control">
 
-        <label class="form-label mt-1"><strong>Contraseña</strong></label>
+        <label class="form-label mt-1"><strong>Contraseña <small>(minimo 6 digitos)</small></strong></label>
         <input type="password" formControlName="user_password" class="form-control" >
 
         <button type="submit"[disabled]="regForm.invalid" class="btn mt-3 btn-primary form-control">CREAR USUARIO</button>

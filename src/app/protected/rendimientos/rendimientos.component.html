@@ -1,1 +1,82 @@
-<p>rendimientos works!</p>
+<form autocomplete="off" [formGroup]="logForm" (ngSubmit)="run()">
+
+  <div class="container-fluid" style="padding: 55px;">
+
+    <div class="container rend-container p-5">
+
+      <div class="row">
+
+        <div class="col">
+          <select class="form-control" formControlName="plan">
+            <option *ngFor="let product of products" [ngValue]="product.product_name">{{product.product_name}}</option>
+
+          </select>
+        </div>
+
+        <div class="col">
+          <input type="number" min='1' max='99999' step='any' class="form-control" placeholder="Ingrese monto"
+            formControlName="monto">
+
+        </div>
+        <div class="col">
+          <input name="fechaNacimiento" type="date" class="form-control" formControlName="date">
+        </div>
+
+        <div class="col">
+          <button [disabled]="logForm.invalid" class='btn btn-outline-danger p-0 w-100 h-100' type='submit'> Ver
+            tabla</button>
+        </div>
+      </div>
+
+
+      <div class="row mt-5">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Plan</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Tasa % </th>
+              <th scope="col">Monto inicial</th>
+              <th scope="col">Rendimiento generado</th>
+              <th scope="col">Plazo</th>
+
+            </tr>
+          </thead>
+          <tbody *ngIf='state'>
+            <tr *ngFor="let item of product_toSimulate.simulacion ; index as i">
+
+              <th scope="row">
+                <strong *ngIf='i === 0'> {{product_toSimulate.plan}}</strong>
+              </th>
+
+              <!-- <td *ngIf='i === 0;else aux'>{{product_toSimulate.date}}</td>
+              <ng-template #aux>
+                <td>{{product_toSimulate.simulacion[i].date}}</td>
+              </ng-template> -->
+             
+             <td>{{product_toSimulate.simulacion[i].date}}</td>
+              <td>{{product_toSimulate.monthlyRate}} %</td>
+              <td>$ {{product_toSimulate.monto | number }}</td>
+              <td class="text-center">$ {{ product_toSimulate.simulacion[i].rend }}</td>
+              <td class="text-center">{{i+1}}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <strong>TOTAL FINAL </strong>
+              </th>
+              <td></td>
+              <td></td>
+              <td>$ {{product_toSimulate.monto | number }}</td>
+              <td class="text-center">$ {{ count | number }}</td>
+              <td class="text-center">$ {{ totalFinal | number }}</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+  </div>
+  <form>
